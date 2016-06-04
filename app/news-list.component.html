@@ -1,0 +1,54 @@
+<style scoped>
+    .button-success,
+    .button-error,
+    .button-warning,
+    .button-secondary {
+        color: white;
+        border-radius: 4px;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-success {
+        background: rgb(28, 184, 65);
+        /* this is a green */
+    }
+
+    .button-error {
+        background: rgb(202, 60, 60);
+        /* this is a maroon */
+    }
+
+    .button-warning {
+        background: rgb(223, 117, 20);
+        /* this is an orange */
+    }
+
+    .button-secondary {
+        background: rgb(66, 184, 221);
+        /* this is a light blue */
+    }
+</style>
+<div class="content">
+    <div class="content-subhead">
+      <button type="submit" class="button-success pure-button"
+      (click)="onClickGetNew('http://127.0.0.1:8000/api/notify/getnew/')">Refresh</button>
+    </div>
+    <div class="content-subhead">
+    <table class="pure-table pure-table-striped pure-table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor='let item of newsService.newNews; let i = index;
+            let isOdd = odd; let isEven = even'>
+                  <td>{{i + 1}}</td>
+                  <td><a href={{item.itemUrl}}>{{item.itemTitle}}</a></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

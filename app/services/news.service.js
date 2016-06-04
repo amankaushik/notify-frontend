@@ -9,22 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var news_list_component_1 = require('./news-list.component');
-var news_service_1 = require('./news.service');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.pageTitle = 'Notify News List';
+var core_2 = require('@angular/core');
+var NewsService = (function () {
+    function NewsService() {
+        this.allNews = [];
+        this.newNews = [];
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'pm-app',
-            template: "{{ pageTitle }}<news-list></news-list>",
-            directives: [news_list_component_1.NewsListComponent],
-            providers: [news_service_1.NewsService]
-        }), 
+    NewsService = __decorate([
+        core_1.Injectable(),
+        core_2.Component({}), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], NewsService);
+    return NewsService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.NewsService = NewsService;
+//# sourceMappingURL=news.service.js.map
