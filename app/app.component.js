@@ -11,15 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var news_list_component_1 = require('./news-list.component');
 var news_service_1 = require('./news.service');
+var news_data_component_1 = require("./news-data.component");
 var AppComponent = (function () {
     function AppComponent() {
-        this.pageTitle = 'Notify News List';
+        this.pageTitle = 'Notify News';
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'pm-app',
-            template: "{{ pageTitle }}<news-list></news-list>",
-            directives: [news_list_component_1.NewsListComponent],
+            selector: 'nn-app',
+            templateUrl: 'app/app.component.html',
+            directives: [news_list_component_1.NewsListComponent, news_data_component_1.NewsDataComponent],
             providers: [news_service_1.NewsService]
         }), 
         __metadata('design:paramtypes', [])

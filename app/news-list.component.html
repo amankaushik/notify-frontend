@@ -1,37 +1,20 @@
-<style scoped>
-    .button-success,
-    .button-error,
-    .button-warning,
-    .button-secondary {
-        color: white;
-        border-radius: 4px;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    }
-
-    .button-success {
-        background: rgb(28, 184, 65);
-        /* this is a green */
-    }
-
-    .button-error {
-        background: rgb(202, 60, 60);
-        /* this is a maroon */
-    }
-
-    .button-warning {
-        background: rgb(223, 117, 20);
-        /* this is an orange */
-    }
-
-    .button-secondary {
-        background: rgb(66, 184, 221);
-        /* this is a light blue */
-    }
-</style>
-<div class="content">
+<!--<div *ngIf=not isNull(newsService.displayNews)>-->
+    <div *ngFor='let item of newsService.displayNews; let i=index'>
+        <!--email-item-selected-->
+        <div class="email-item pure-table-striped  pure-g">
+            <div class="pure-u-3-4 ">
+                <h5 class="email-name">{{i + 1}}</h5>
+                <h4 class="email-subject"><a href={{item.itemUrl}} target="_blank">{{item.itemTitle}}</a></h4>
+                <!--<p class="email-desc">
+                </p>-->
+            </div>
+        </div>
+    </div>
+<!--</div>-->
+<!--<div class="content">
     <div class="content-subhead">
       <button type="submit" class="button-success pure-button"
-      (click)="onClickGetNew('http://127.0.0.1:8000/api/notify/getnew/')">Refresh</button>
+      (click)="onClickGetNew('https://boiling-mesa-79238.herokuapp.com/api/notify/getall/?format=json')">Get All</button>
     </div>
     <div class="content-subhead">
     <table class="pure-table pure-table-striped pure-table-bordered">
@@ -51,4 +34,4 @@
         </tbody>
       </table>
     </div>
-</div>
+</div>-->

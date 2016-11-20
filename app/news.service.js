@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var NewsService = (function () {
     function NewsService() {
-        this.allNews = [];
+        this.displayNews = [];
     }
     NewsService = __decorate([
         core_1.Injectable(), 

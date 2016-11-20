@@ -9,45 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
 var news_service_1 = require('./news.service');
 var common_1 = require('@angular/common');
 var NewsListComponent = (function () {
-    function NewsListComponent(http, newsService) {
-        this.http = http;
+    function NewsListComponent(newsService) {
         this.newsService = newsService;
     }
-    NewsListComponent.prototype.getRequest = function (url) {
-        this.requestoptions = new http_1.RequestOptions({
-            method: http_1.RequestMethod.Get,
-            url: url
-        });
-        return this.http.request(new http_1.Request({
-            method: http_1.RequestMethod.Get,
-            url: url
-        }));
-    };
-    NewsListComponent.prototype.onClickGetNew = function (url) {
-        var _this = this;
-        this.getRequest(url).subscribe(function (res) {
-            //console.log('Res', res.json());
-            _this.newsService.newNews = res.json();
-            console.log(_this.newsService.newNews);
-        });
-    };
-    NewsListComponent.prototype.onClickDataRefresh = function (url) {
-        this.requestoptions = new http_1.RequestOptions({
-            method: http_1.RequestMethod.Get,
-            url: url
-        });
-    };
     NewsListComponent = __decorate([
         core_1.Component({
             selector: 'news-list',
             templateUrl: 'app/news-list.component.html',
             directives: [common_1.NgClass]
         }), 
-        __metadata('design:paramtypes', [http_1.Http, news_service_1.NewsService])
+        __metadata('design:paramtypes', [news_service_1.NewsService])
     ], NewsListComponent);
     return NewsListComponent;
 }());

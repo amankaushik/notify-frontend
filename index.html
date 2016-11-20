@@ -1,15 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>News Notify</title>
 
-    <title>Responsive Side Menu &ndash; Layout Examples &ndash; Pure</title>
-
-    <link rel="stylesheet" href="pure-min.css">
-    <link rel="stylesheet" href="side-menu.css">
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/layouts/email.css">
     <script src="node_modules/core-js/client/shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
@@ -17,42 +14,32 @@
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
     <script>
-        System.import('app').catch(function(err) {
+        System.import('app').catch(function (err) {
             console.error(err);
         });
     </script>
 </head>
-
 <body>
+<nn-app></nn-app>
+<!--
+<script src="js/yui-min.js"></script>
 
-    <div id="layout">
-        <!-- Menu toggle -->
-        <a href="#menu" id="menuLink" class="menu-link">
-            <!-- Hamburger icon -->
-            <span></span>
-        </a>
+<script>
+    YUI().use('node-base', 'node-event-delegate', function (Y) {
 
-        <div id="menu">
-            <div class="pure-menu">
-                <a class="pure-menu-heading" href="#">Notify</a>
-                <ul class="pure-menu-list">
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Top News</a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">New News</a></li>
+        var menuButton = Y.one('.nav-menu-button'),
+                nav = Y.one('#nav');
 
-                    <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-                        <a href="#" class="pure-menu-link">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        // Setting the active class name expands the menu vertically on small screens.
+        menuButton.on('click', function (e) {
+            nav.toggleClass('active');
+        });
 
-        <div id="main">
-            <div class="header">
-                <pm-app class="pure-menu-heading">{{ pageTitle }}</pm-app>
-            </div>
-        </div>
-    </div>
-    <script src="ui.js"></script>
+        // Your application code goes here...
+
+    });
+</script>
+-->
+<!--<script src="js/ui.js"></script>-->
 </body>
-
 </html>
